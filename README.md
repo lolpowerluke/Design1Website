@@ -1,3 +1,3 @@
 # Design1Website
 
-Yes, this is my illustrator porject made in html instead of illustrator
+Yes, this is my illustrator project made in html instead of illustrator
