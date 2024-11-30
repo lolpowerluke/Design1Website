@@ -7,42 +7,60 @@ body {
   grid-template-rows: 75px 1fr 22px;
 }
 header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px 15px 15px;
-  height: 75px;
-  box-sizing: border-box;
-  gap: 15px;
   background-color: rgb(15, 15, 15);
 
-  img {
-    filter: invert(1);
-    height: 100%;
-  }
-  a {
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    gap: 15px;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-  }
-  span {
-    font-size: 38px;
-    color: white;
-  }
-  div {
+  & > div {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px 15px 15px;
+    height: 75px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
     gap: 15px;
+
+    img {
+      filter: invert(1);
+      height: 100%;
+    }
+    a {
+      text-decoration: none;
+      height: 100%;
+      display: flex;
+      gap: 15px;
+      flex-direction: row;
+      align-items: center;
+      color: white;
+    }
+    span {
+      font-size: 38px;
+      color: white;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+  
+      a {
+        padding: 5px 10px;
+        border: 1px solid white;
+        background-color: grey;
+      }
+      a:hover {
+        border-color: grey;
+        background-color: white;
+        color: grey;
+      }
+    }
   }
 }
 body > div {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   height: 100%;
   box-sizing: border-box;
   padding: 15px;
@@ -59,6 +77,36 @@ body > div {
     scrollbar-width: auto;
     scrollbar-color: white black;
 
+    .mainimg {
+      position: relative;
+
+      div {
+        inset: 0;
+        padding: 15px 25px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 50%, transparent);
+        color: white;
+      }
+      span {
+        font-size: 20px;
+      }
+      img {
+        width: 100%;
+        filter: grayscale(1);
+      }
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      img {
+        width: 100%;
+      }
+    }
     &::-webkit-scrollbar {
       width: 8px; /* Width of the scrollbar */
     }
@@ -80,4 +128,13 @@ body > div {
 footer {
   background-color: grey;
   text-align: center;
+}
+@media (max-width:800px) {
+  body > div {
+    .scroller {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 }
