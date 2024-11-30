@@ -117,8 +117,9 @@ header {
     scrollbar-width: auto;
     scrollbar-color: white black;
 
-    .mainimg {
+    .mainImg {
       position: relative;
+      display: flex;
 
       div {
         inset: 0;
