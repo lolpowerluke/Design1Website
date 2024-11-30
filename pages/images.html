@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Design</title>
   <link rel="stylesheet" href="../style.css">
+  <script src="../functions.js"></script>
 </head>
 <body>
   <header>
@@ -18,35 +19,77 @@
       </div>
     </div>
   </header>
-  <div>
+  <div class="main">
     <div class="scroller">
       <div class="gallery">
-        <div class="eye">
+        <button class="eye" onclick="showImage('eye')">
           <img src="../images/eye-2.jpg" alt="eye">
-        </div>
-        <div class="guitar">
+          <span>Eye</span>
+        </button>
+        <button class="guitar" onclick="showImage('guitar')">
           <img src="../images/guitar-2.jpg" alt="guitar">
-        </div>
-        <div class="papi">
+          <span>Guitar</span>
+        </button>
+        <button class="papi" onclick="showImage('papi')">
           <img src="../images/papi-2.jpg" alt="papi">
-        </div>
-        <div class="patroon">
+          <span>Papi</span>
+        </button>
+        <button class="patroon" onclick="showImage('patroon')">
           <img src="../images/patroon-2.jpg" alt="patroon">
-        </div>
-        <div class="room">
+          <span>Patroon</span>
+        </button>
+        <button class="room" onclick="showImage('room')">
           <img src="../images/room-2.jpg" alt="room">
-        </div>
-        <div class="thor and loki">
+          <span>Room</span>
+        </button>
+        <button class="thor and loki" onclick="showImage('thor-and-loki')">
           <img src="../images/ThorAndLoki-2.jpg" alt="thor and loki">
-        </div>
-        <div class="outside view">
+          <span>Thor and Loki</span>
+        </button>
+        <button class="outside view" onclick="showImage('outside-view')">
           <img src="../images/view-2.jpg" alt="ouside view">
-        </div>
-        <div class="walking the dogs">
+          <span>Outside view</span>
+        </button>
+        <button class="walking the dogs" onclick="showImage('walking-the-dogs')">
           <img src="../images/walkingdogs-2.jpg" alt="walking the dogs">
-        </div>
+          <span>Walking the dogs</span>
+        </button>
       </div>
     </div>
+  </div>
+  <div class="overlay" id="overlay" style="display: none;" onclick="hideOverlay('all')">
+    <button id="eye">
+      <span>Eye</span>
+      <img src="../images/eye-2.jpg" alt="eye">
+    </button>
+    <button id="guitar">
+      <span>Guitar</span>
+      <img src="../images/guitar-2.jpg" alt="guitar">
+    </button>
+    <button id="papi">
+      <span>Papi</span>
+      <img src="../images/papi-2.jpg" alt="papi">
+    </button>
+    <button id="patroon">
+      <span>Patroon</span>
+      <img src="../images/patroon-2.jpg" alt="patroon">
+    </button>
+    <button id="room">
+      <span>Room</span>
+      <img src="../images/room-2.jpg" alt="room">
+    </button>
+    <button id="thor-and-loki">
+      <span>Thor and Loki</span>
+      <img src="../images/ThorAndLoki-2.jpg" alt="thor and loki">
+    </button>
+    <button id="outside-view">
+      <span>Outside view</span>
+      <img src="../images/view-2.jpg" alt="ouside view">
+    </button>
+    <button id="walking-the-dogs">
+      <span>Walking the dogs</span>
+      <img src="../images/walkingdogs-2.jpg" alt="walking the dogs">
+    </button>
   </div>
   <footer>© Info on this site may not be shared outside.</footer>
 </body>
