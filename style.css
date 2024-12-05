@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=New+Rocker&display=swap');
 body {
   width: 100vw;
   height: 100vh;
@@ -15,6 +16,16 @@ body {
     opacity: .25;
     filter: grayscale(1);
   }
+}
+h1 {
+  font-family: "New Rocker", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+span {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 500;
+  font-style: light;
 }
 header {
   background-color: rgb(15, 15, 15);
@@ -43,10 +54,16 @@ header {
       flex-direction: row;
       align-items: center;
       color: white;
+      font-family: "New Rocker", serif;
+      font-weight: 400;
+      font-style: normal;
     }
     span {
       font-size: 38px;
       color: white;
+      font-family: "New Rocker", serif;
+      font-weight: 400;
+      font-style: normal;
     }
     div {
       display: flex;
@@ -149,22 +166,28 @@ header {
         position: relative;
         overflow: hidden;
 
-        & > span {
+        & > div {
+          display: flex;
+          flex-direction: column;
           color: white;
-          background-color: black;
+          background-color: rgba(0, 0, 0, 0.7);
           border: 1px solid grey;
           position: absolute;
           left: -100%;
           bottom: 15px;
           padding: 5px 10px;
           transition: left 0.2s;
+
+          h1 {
+            margin: 0;
+          }
         }
         &:hover {
 
           img {
             filter: grayscale(0);
           }
-          & > span {
+          & > div {
             left: 10px;
           }
         }
@@ -175,8 +198,6 @@ header {
           border: 1px solid white;
           box-sizing: border-box;
         }
-      }
-      div {
       }
     }
     &::-webkit-scrollbar {
