@@ -17,7 +17,9 @@ body {
     filter: grayscale(1);
   }
 }
-h1 {
+h1,
+h2,
+h3 {
   font-family: "New Rocker", serif;
   font-weight: 400;
   font-style: normal;
@@ -28,7 +30,7 @@ span {
   font-style: light;
 }
 header {
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(34, 34, 34);
 
   & > div {
     display: flex;
@@ -113,6 +115,47 @@ header {
     }
   }
 }
+.mainImg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  div {
+    inset: 0;
+    padding: 15px 25px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6) 40%, transparent 80%);
+    color: white;
+    
+    a {
+      text-decoration: none;
+      font-family: "New Rocker", serif;
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+      background-color: grey;
+      border: 1px solid white;
+      padding: 5px 10px;
+      width: fit-content;
+      margin-top: 16px;
+    }
+    h1 {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+  }
+  span {
+    font-size: 20px;
+  }
+  img {
+    width: 100%;
+    filter: grayscale(1);
+  }
+}
 .main {
   width: 100%;
   max-width: 1200px;
@@ -134,28 +177,7 @@ header {
     scrollbar-width: auto;
     scrollbar-color: white black;
 
-    .mainImg {
-      position: relative;
-      display: flex;
-
-      div {
-        inset: 0;
-        padding: 15px 25px;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 50%, transparent);
-        color: white;
-      }
-      span {
-        font-size: 20px;
-      }
-      img {
-        width: 100%;
-        filter: grayscale(1);
-      }
-    }
+    
     .gallery {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -173,7 +195,7 @@ header {
           background-color: rgba(0, 0, 0, 0.7);
           border: 1px solid grey;
           position: absolute;
-          left: -100%;
+          left: -400px;
           bottom: 15px;
           padding: 5px 10px;
           transition: left 0.2s;
