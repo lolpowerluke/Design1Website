@@ -61,11 +61,17 @@ header {
       font-style: normal;
     }
     span {
-      font-size: 38px;
-      color: white;
+      font-size: 48px;
+      color: transparent;
       font-family: "New Rocker", serif;
       font-weight: 400;
       font-style: normal;
+      background-image: url(images/eye-2.jpg);
+      filter: grayscale(1);
+      background-size: cover;
+      background-position: center;
+      background-clip: text;
+      /* animation: moveBackground 20s infinite ease; */
     }
     div {
       display: flex;
@@ -115,47 +121,6 @@ header {
     }
   }
 }
-.mainImg {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  div {
-    inset: 0;
-    padding: 15px 25px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6) 40%, transparent 80%);
-    color: white;
-    
-    a {
-      text-decoration: none;
-      font-family: "New Rocker", serif;
-      font-weight: 400;
-      font-style: normal;
-      color: white;
-      background-color: grey;
-      border: 1px solid white;
-      padding: 5px 10px;
-      width: fit-content;
-      margin-top: 16px;
-    }
-    h1 {
-      margin-top: 0;
-      margin-bottom: 16px;
-    }
-  }
-  span {
-    font-size: 20px;
-  }
-  img {
-    width: 100%;
-    filter: grayscale(1);
-  }
-}
 .main {
   width: 100%;
   max-width: 1200px;
@@ -165,7 +130,127 @@ header {
   padding: 15px;
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
 
+
+  .mainImg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    div {
+      inset: 0;
+      padding: 15px 25px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6) 40%, transparent 80%);
+      color: white;
+      
+      a {
+        text-decoration: none;
+        font-family: "New Rocker", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+        background-color: grey;
+        border: 1px solid white;
+        padding: 5px 10px;
+        width: fit-content;
+        margin-top: 16px;
+      }
+      a:hover {
+        color: grey;
+        background-color: white;
+        border: 1px solid grey;
+      }
+      h1 {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+    }
+    span {
+      font-size: 20px;
+    }
+    img {
+      width: 100%;
+      filter: grayscale(1);
+    }
+  }
+  .ads {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-top: 50px;
+    box-sizing: border-box;
+    gap: 15px;
+    height: 100%;
+
+    & > a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      border: 1px solid grey;
+      padding: 15px;
+      height: fit-content;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+
+      &.about {
+        align-self: flex-start;
+      }
+      &::after,
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: scale(0);
+        box-sizing: border-box;
+      }
+      &::after {
+        content: ">";
+        background-color: rgba(129, 129, 129, 0.5);
+        transition-delay: 0s;
+        font-size: 58px;
+        padding: 15px;
+        text-align: end;
+        transition: transform 1s;
+      }
+      &::before {
+        transition-delay: .1s;
+        transition: transform 1s;
+      }
+      & > * {
+        z-index: 1;
+      }
+      h1 {
+        margin: 0;
+      }
+      .a {
+        color: grey;
+      }
+      &:hover {
+        &::after {
+          transition-delay: .1s;
+          transform: scale(1);
+        }
+        &::before {
+          transition-delay: 0s;
+          transform: scale(2);
+          transition: transform 2s;
+        }
+      }
+    }
+  }
   .scroller {
     width: 100%;
     height: 100%;
@@ -253,3 +338,14 @@ footer {
     }
   }
 }
+/* @keyframes moveBackground {
+  0% {
+    background-position: -50px center;
+  }
+  50% {
+    background-position: 50px center;
+  }
+  100% {
+    background-position: -50px center;
+  }
+} */
