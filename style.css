@@ -274,7 +274,12 @@ header {
     overflow: hidden scroll;
     scrollbar-width: auto;
     scrollbar-color: white black;
+    display: grid;
+    grid-template-rows: auto 1fr;
 
+    &.grid-full-height {
+      grid-template-rows: 1fr;
+    }
     .about-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
